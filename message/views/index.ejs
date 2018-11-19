@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>留言板</title>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <style>
+  form{
+    padding-right:500px; 
+    padding-left:100px; 
+  }
+  hr{
+    border: 2px solid gray;
+  }
+  li{
+    border:2px solid #ADD8E6;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+  }
+  body{
+    background-color:rgba(255, 94, 0, 0.027);
+    border: 10px double gray;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 70px;
+  }
+  .form-control{
+    margin-bottom: 10px;
+  }
+  h1{
+    margin-left: 95px;
+  }
+  </style>
+</head>
+<body>
+  <h1>留言板</h1>
+  <form action="/tijiao">
+    姓名: 
+    <div>
+      <h3><%= username %></h3>
+    </div>
+    留言: <br>
+    <textarea class="form-control" rows="3" name='msg'></textarea>
+    <input type="submit" class="btn btn-default" value="提交">
+  </form>
+   <hr>
+
+   <ul>
+      <% for(var i=0;i<msg.length;i++){ %>
+        <li>
+          <div><%= msg[i].username %></div>
+          <div><%= msg[i].msg %></div>
+          <div><%= msg[i].time %></div>
+          <div>
+            <a href="/delete?id=<%= msg[i]._id %>">删除</a>
+            <a href="/update/<%= msg[i]._id %>">修改</a>
+          </div>
+        </li>
+      <% } %> 
+
+   </ul>
+</body>
+</html>

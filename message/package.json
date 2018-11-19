@@ -1,0 +1,19 @@
+{
+  "name": "message",
+  "version": "1.0.0",
+  "description": "project message",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fei",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongodb": "^3.1.8",
+    "silly-datetime": "^0.1.2"
+  }
+}
